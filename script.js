@@ -25,13 +25,14 @@ function handleSubmit(e){
   const servicio = encodeURIComponent(form.servicio.value);
   const mensaje = encodeURIComponent(form.mensaje.value.trim());
 
-  // CAMBIA este número por el tuyo en formato internacional sin + ni espacios.
-  const waNumber = "520000000000";
+  // WhatsApp Hell Night (México: +52)
+  const waNumber = "525510459053";
 
-  const text = `Hola, soy ${nombre}.%0A` +
-               `Mi teléfono/WhatsApp: ${telefono}.%0A` +
-               `Servicio: ${servicio}.%0A` +
-               `Mensaje: ${mensaje}`;
+  const text =
+    `Hola, soy ${nombre}.%0A` +
+    `Mi WhatsApp: ${telefono}.%0A` +
+    `Tipo de pedido: ${servicio}.%0A` +
+    `Detalles: ${mensaje}`;
 
   window.open(`https://wa.me/${waNumber}?text=${text}`, "_blank");
   return false;
